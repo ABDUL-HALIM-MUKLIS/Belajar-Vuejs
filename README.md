@@ -8,11 +8,14 @@
     ```js
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
     ```
-2. Menginisialisasi objek Vue
+    
+# [Options / DOM](https://vuejs.org/v2/api/#Options-DOM)
+## el
+1. Menginisialisasi objek Vue
     ```js
         new Vue()
     ```
-3. Bungkus content dari HTMl atau halaman web yang nantinya bisa di akses oleh Vuejs
+2. Bungkus content dari HTMl atau halaman web yang nantinya bisa di akses oleh Vuejs
     > pembungkus harus di beri id atau name atau class agar nantinya dapat di baca oleh el dari vue
 
     ```html
@@ -29,7 +32,8 @@
         })
     ```
 
-# Data
+# [Options / Data](https://vuejs.org/v2/api/#Options-Data) 
+## Data
 > Data merupakan sebuah properti pada vue yang berisi variabel yang dapat di isikan sebuah data
 
 * Menambhkan properti data
@@ -48,7 +52,7 @@
         <h2>{{ jurusan }}</2>
     ```
 
-# Method
+## Method
 > Metod merupakan sebuah properti yang akan di tambahkan dimana value nya berisi sebuah fungsi-fungsi yang nantinya dapat di pergunakan dan dapat di panggil pada halaman html
 
 * menambhkan properti methods
@@ -75,7 +79,7 @@
         <h2>{{ getname() }}</h2>
     ```
 
-# Computed Property
+## Computed Property
 > Menambhkan sebuah properti sendiri, yang nantinya di simpan pada properti compted.
 * Menambah properti computed
     ```js
@@ -97,3 +101,14 @@
                     }
                 })
     ``` 
+
+# [Directives](https://vuejs.org/v2/api/#Directives)
+## v-cloak
+```html
+        [v-cloak] {
+            display: none;
+        }
+        <div v-cloak>
+            {{ message }}
+        </div>
+```
