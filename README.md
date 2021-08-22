@@ -8,7 +8,7 @@
     ```js
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
     ```
-    
+
 # [Options / DOM](https://vuejs.org/v2/api/#Options-DOM)
 ## el
 1. Menginisialisasi objek Vue
@@ -103,12 +103,62 @@
     ``` 
 
 # [Directives](https://vuejs.org/v2/api/#Directives)
-## v-cloak
+## v-text
+> v-text untuk memangil sebuah variabel namun hanya dengan menambhkan atribut pada html namun data yang di tampilkan berupa String
 ```html
-        [v-cloak] {
-            display: none;
-        }
-        <div v-cloak>
-            {{ message }}
-        </div>
+        <!-- Mengunakan v-text -->
+        <span v-text="msg"></span>
+
+        <!-- Cara biasa -->
+        <span>{{msg}}</span>
 ```
+
+## v-html
+> v-html untuk memangil sebuah variabel namun hanya dengan menambhkan atribut pada html namun data yang di tampilkan berupa tag html
+
+* Contoh data
+```js
+    data: {
+            judul: '<h1> Coba v-html </h1>',
+    },
+```
+* pemangilan
+```html
+    <!-- Mengunakan v-text -->
+    <div v-html="html"></div>
+```
+
+# [Events](https://vuejs.org/v2/api/#vm-on)
+## vm.$on
+
+```html
+         <script>
+                const isi = {
+                    bil: 0,
+                }
+                const vm = new Vue({
+                    el: '#app',
+                    data: isi,
+                    // membuat metod
+                    methods: {
+                    },
+                    computed: {
+                        hitung: function () {
+                            return this.bil % 2 === 0 ? "Genap" : "Ganjil"
+                        }
+                    }
+                })
+            </script>
+```
+```html
+     <button v-on:click="bil++">Click</button>
+```
+
+
+# Class and Style Bindings
+
+
+
+
+[Terakhir tutorial 19](https://www.youtube.com/playlist?list=PL9At9z2rvOC-Z6Gt8uO1XMp4oyMlE3gml)
+

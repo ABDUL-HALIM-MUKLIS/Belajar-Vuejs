@@ -6,13 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
     <div id="app">
         <header>
             <!-- <img src="https://source.unsplash.com/1200x400" alt="" style="width: 80;"> -->
-            <img src="https://vuejs.org/images/logo.svg" alt="" style="width: 80px;">
+            <!-- mengunakan v-bind agar dapat memangil img dengan src -->
+            <img v-bind:src="img" alt="" style="width: 80px;">
             <h1>What is Vue.js</h1>
             <!-- contoh pemangilan variabel -->
             <!-- v-once digunakan agar isi dari variabel tidak bisa di ubah atau menjadi final -->
@@ -25,6 +32,8 @@
         <h2>Projek sederhana</h2>
         <a href="ganjilgenap.html">Ganjil Genap</a>
 
+        <h2>Projek sederhana</h2>
+        <a href="events.html">belajar Events</a>
 
         <footer id="footer">
             <p>copyright 2021</p>
@@ -41,7 +50,8 @@
             name: 'Halim',
             wel: 'Selamat Datang ',
             qty: 2,
-            price: 5000000
+            price: 5000000,
+            img: 'https://vuejs.org/images/logo.svg'
         }
         const vm = new Vue({
             el: '#app',
