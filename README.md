@@ -1,3 +1,5 @@
+<p align="center"><a href="https://vuejs.org/" target="_blank"><img src="https://vuejs.org/images/logo.svg" width="400"></a></p>
+
 # Belajar-Vuejs
 1. Mendownload Extensen pada browser yaitu extensi Vuejs
 2. Menaruh [CDN](https://vuejs.org/v2/guide/installation.html#CDN) dari Vuejs ke program
