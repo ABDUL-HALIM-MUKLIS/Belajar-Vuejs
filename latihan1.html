@@ -16,9 +16,14 @@
             <h1>What is Vue.js</h1>
             <!-- contoh pemangilan variabel -->
             <!-- v-once digunakan agar isi dari variabel tidak bisa di ubah atau menjadi final -->
-            <h2 v-once>{{ pesan + name }}</h2>
+            <h2 v-once>{{ wel + getname() }}</h2>
+            <!-- tanpa v-once -->
+            <h2>{{ wel + getname() }}</h2>
             <p>The Progressive JavaScript Framework</p>
         </header>
+
+        <h2>Projek sederhana</h2>
+        <a href="ganjilgenap.html">Ganjil Genap</a>
 
 
         <footer id="footer">
@@ -34,11 +39,30 @@
     <script>
         const isi = {
             name: 'Halim',
-            pesan: 'Selamat Datang ',
+            wel: 'Selamat Datang ',
+            qty: 2,
+            price: 5000000
         }
         const vm = new Vue({
             el: '#app',
-            data: isi
+            data: isi,
+            // membuat metod
+            methods: {
+                // metod tanpa parameter
+                getname: function () {
+                    return 'Abdul ' + this.name
+                },
+                // metod dengan parameter
+                updateName: function (newName) {
+                    return this.name = newName
+                }
+
+            },
+            computed: {
+                totalPrice: function () {
+                    return this.qty * this.price
+                }
+            }
         })
     </script>
 </body>
