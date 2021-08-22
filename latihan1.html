@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <!-- <img src="https://source.unsplash.com/1200x400" alt="" style="width: 80;"> -->
+            <img src="https://vuejs.org/images/logo.svg" alt="" style="width: 80px;">
+            <h1>What is Vue.js</h1>
+            <!-- contoh pemangilan variabel -->
+            <!-- v-once digunakan agar isi dari variabel tidak bisa di ubah atau menjadi final -->
+            <h2 v-once>{{ pesan + name }}</h2>
+            <p>The Progressive JavaScript Framework</p>
+        </header>
+
+
+        <footer id="footer">
+            <p>copyright 2021</p>
+        </footer>
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <!-- Inisiasi Object -->
+    <script>
+        const isi = {
+            name: 'Halim',
+            pesan: 'Selamat Datang ',
+        }
+        const vm = new Vue({
+            el: '#app',
+            data: isi
+        })
+    </script>
+</body>
+
+</html>
