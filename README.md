@@ -28,3 +28,72 @@
             el: '#app'
         })
     ```
+
+# Data
+> Data merupakan sebuah properti pada vue yang berisi variabel yang dapat di isikan sebuah data
+
+* Menambhkan properti data
+    ```js
+        new Vue({
+                    el: '#app',
+                    data: {
+                        name: 'abdul',
+                        jurusan: 'Informatika'
+                    }
+                })
+    ``` 
+* Pemangilan
+    ```html
+        <h2>{{ name }}</h2>
+        <h2>{{ jurusan }}</2>
+    ```
+
+# Method
+> Metod merupakan sebuah properti yang akan di tambahkan dimana value nya berisi sebuah fungsi-fungsi yang nantinya dapat di pergunakan dan dapat di panggil pada halaman html
+
+* menambhkan properti methods
+    ```js
+        new Vue({
+                    el: '#app',
+                    data: {
+                        name: 'abdul'
+                    },
+                    methods: {
+                        // metod tanpa parameter
+                        getname: function () {
+                            return 'Abdul ' + this.name
+                        },
+                        // metod dengan parameter
+                        updateName: function (newName) {
+                            return this.name = newName
+                        }
+                    }
+                })
+    ``` 
+* Pemangilan
+    ```html
+        <h2>{{ getname() }}</h2>
+    ```
+
+# Computed Property
+> Menambhkan sebuah properti sendiri, yang nantinya di simpan pada properti compted.
+* Menambah properti computed
+    ```js
+        new Vue({
+                    el: '#app',
+                    data: {
+                            name: 'SmartPhone',
+                            qty: 0,
+                            price: 5000000
+                    },
+                    methods: {
+                            // isi metod
+                        }
+                    },
+                    computed: {
+                        totalPrice: function() {
+                            return  this.qty * this.price
+                        }
+                    }
+                })
+    ``` 
