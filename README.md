@@ -100,7 +100,11 @@
                         }
                     }
                 })
-    ``` 
+    ```
+* pemangilan 
+```html
+    {{ totalPrice }}
+``` 
 
 # [Directives](https://vuejs.org/v2/api/#Directives)
 ## v-text
@@ -161,7 +165,7 @@
     <div
     class="static"
     v-bind:class="{ active: isActive, 'text-danger': hasError }"
-    ></div
+    ></div>
 ```
 
 * Data
@@ -179,6 +183,9 @@
 ```html
     <div class="static active"></div>
 ```
+
+
+# [Data Binding]()
 
 
 
