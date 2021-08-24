@@ -155,8 +155,30 @@
 ```
 
 
-# Class and Style Bindings
+# [Class and Style Bindings](https://vuejs.org/v2/guide/class-and-style.html)
+* Cara pengunaan
+```html
+    <div
+    class="static"
+    v-bind:class="{ active: isActive, 'text-danger': hasError }"
+    ></div
+```
 
+* Data
+```js
+    data: {
+    isActive: true,
+    hasError: false
+    }
+```
+
+> Maka yang akan terjadi pada script diatas : dimana pada data isActive berisi true maka otomatis akan menjalankan active.
+
+> Script menjadi
+
+```html
+    <div class="static active"></div>
+```
 
 
 
