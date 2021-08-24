@@ -185,9 +185,16 @@
 ```
 
 
-# [Data Binding]()
+# [Form Input Binding](https://vuejs.org/v2/guide/forms.html)
+> yaitu sebuah inputan yang dimana akan langsung di tampung pada data dan langsung dapat di panggil
+
+> Ada banyak inputan yang dapat di gunakan namun pada latihan kali ini saya mengunakan text
+> Dimana mengunkaan v-model yang didalamya berupa variabel data, nantinya text yang di inputkan langsung di tampung oleh data.
+```html
+    <input v-model="message" placeholder="edit me">
+    <p>Message is: {{ message }}</p>
+```
 
 
-
-[Terakhir tutorial 19](https://www.youtube.com/playlist?list=PL9At9z2rvOC-Z6Gt8uO1XMp4oyMlE3gml)
+[Terakhir tutorial 22](https://www.youtube.com/playlist?list=PL9At9z2rvOC-Z6Gt8uO1XMp4oyMlE3gml)
 
