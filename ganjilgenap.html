@@ -24,6 +24,13 @@
         <p>Bilangan {{ bil }} adalah bilangan {{ hitung }}</p>
 
 
+        <h2>Ganjil genap dengan for dan Metod</h2>
+        <ul>
+            <li v-for="i in gg(bilangan)">{{ i }}</li>
+        </ul>
+
+
+
         <footer id="footer">
         </footer>
 
@@ -37,12 +44,21 @@
 
         const isi = {
             bil: 2,
+            bilangan: [1, 2, 3, 4, 5],
         }
         const vm = new Vue({
             el: '#app',
             data: isi,
+
             // membuat metod
             methods: {
+                //funsi biasa
+                gg: function (data) {
+                    // dengan ero finsi
+                    return data.filter(angka => {
+                        return angka % 2 == 2
+                    })
+                }
             },
             computed: {
                 hitung: function () {
