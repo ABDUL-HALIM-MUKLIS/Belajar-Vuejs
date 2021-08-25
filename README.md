@@ -156,6 +156,44 @@
     </ul>
 ```
 
+## v-if
+
+* data
+```js
+    'kelas': [],
+```
+
+> Dimana if mengecek apakah variabel index terdapat data tidak ada data akan menjalankan v-else dan tag di dalam if akan di hapus
+> v-else harus sejajar dan di bawah v-if jika terpisah dengan tag lain maka else diangap bukan bagian if di atas
+```html
+    <ul v-if="kelas.length >= 1">
+        <li v-for="(k , index) of kelas">
+            <h4>{{ index+1 }} : {{ k }}</h4>
+        </li>
+    </ul>
+    <li v-else>Kelas kosong</li>
+```
+
+> v-if di atas di tempatkan pada tag ul, namun dapat juga di tempatkan pada tag tamplate, perbedaan dengan sebelumnya jika mengunakan template, tag tamplate tidak akan di munculkan pada halaman html
+```html
+    <template v-if="">
+        ...
+    <template>
+```
+
+## v-show
+> v-show hampir sama dengan if namun v-show tidak menghilangkan tag html, namun merubah display menjadi none.
+> Pada v-show tidak dapat mengunakan tamplate seperti v-if
+
+```html
+    <ul v-if="kelas.length >= 1">
+        <li v-for="(k , index) of kelas">
+            <h4>{{ index+1 }} : {{ k }}</h4>
+        </li>
+    </ul>
+```
+
+
 # [Events](https://vuejs.org/v2/api/#vm-on)
 ## vm.$on
 
@@ -220,5 +258,5 @@
 ```
 
 
-[Terakhir tutorial 22](https://www.youtube.com/playlist?list=PL9At9z2rvOC-Z6Gt8uO1XMp4oyMlE3gml)
+[Terakhir tutorial 30](https://www.youtube.com/playlist?list=PL9At9z2rvOC-Z6Gt8uO1XMp4oyMlE3gml)
 

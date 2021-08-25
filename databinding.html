@@ -33,9 +33,18 @@
                 <label><input type="checkbox" value="Angular" v-model='kelas'>Angular</label>
             </div>
 
-            <ul>
+            <h3>v-if Jumlah kelas {{ kelas.length }}</h3>
+            <ul v-if="kelas.length >= 1">
                 <li v-for="(k , index) of kelas">
-                    <h2>{{ index+1 }} : {{ k }}</h2>
+                    <h4>{{ index+1 }} : {{ k }}</h4>
+                </li>
+            </ul>
+            <li v-else>Kelas kosong</li>
+
+            <h3>v-show Jumlah kelas {{ kelas.length }}</h3>
+            <ul v-if="kelas.length >= 1">
+                <li v-for="(k , index) of kelas">
+                    <h4>{{ index+1 }} : {{ k }}</h4>
                 </li>
             </ul>
 
@@ -60,7 +69,7 @@
 
         const isi = {
             'data': 'coba',
-            'kelas': ['PHP', 'JAVA', 'Python'],
+            'kelas': ['php'],
         }
         const vm = new Vue({
             el: '#app',
