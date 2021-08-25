@@ -132,6 +132,30 @@
     <div v-html="html"></div>
 ```
 
+## v-for
+* data
+```js
+    'kelas': ['PHP', 'JAVA', 'Python'],
+```
+
+* Perualangan
+> Diaman k sebagai alias dari key variabel
+
+```js
+    <ul>
+        <li v-for="k in kelas">
+            <h2>{{ k }}</h2>
+        </li>
+    </ul>
+```
+
+* Cotoh perulangan 5x
+```html
+    <ul>
+        <li v-for="x in 5">{{ x }}</li>
+    </ul>
+```
+
 # [Events](https://vuejs.org/v2/api/#vm-on)
 ## vm.$on
 

@@ -32,6 +32,18 @@
                 <label><input type="checkbox" value="Vuejs" v-model='kelas'>Vuejs</label>
                 <label><input type="checkbox" value="Angular" v-model='kelas'>Angular</label>
             </div>
+
+            <ul>
+                <li v-for="(k , index) of kelas">
+                    <h2>{{ index+1 }} : {{ k }}</h2>
+                </li>
+            </ul>
+
+            <ul>
+                <li v-for="x in 5">{{ x }}</li>
+            </ul>
+
+
         </header>
 
 
@@ -48,7 +60,7 @@
 
         const isi = {
             'data': 'coba',
-            'kelas': [],
+            'kelas': ['PHP', 'JAVA', 'Python'],
         }
         const vm = new Vue({
             el: '#app',
