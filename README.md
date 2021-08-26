@@ -195,7 +195,7 @@
 
 
 # [Event Handling](https://vuejs.org/v2/guide/events.html)
-## vm.$on
+## Listening to Events
 
 ```html
          <script>
@@ -218,6 +218,27 @@
 ```
 ```html
      <button v-on:click="bil++">Click</button>
+```
+
+## Event Modifiers
+> Dimana dengan program di bawah saya emembuat sebuah menu navigasi jika salah 1 menu di klik maka class active akan muncul pada class
+
+```js
+    data {
+        'menu': 'tiga',
+    },
+    methods: {
+        gantimenu: function (data, event) {
+            this.menu_b = data
+
+        },
+    }
+```
+
+```html
+    <a href="classbinding.html" v-bind:class="{active: menu === 'satu'}" v-on:click.prevent="gantimenu('satu')">Tombol 1</a>
+    <a href="classbinding.html" v-bind:class="{active: menu === 'dua'}" v-on:click.prevent="gantimenu('dua')">Tombol 2</a>
+    <a href="classbinding.html" v-bind:class="{active: menu === 'tiga'}" v-on:click.prevent="gantimenu('tiga')">Tombol 3</a>
 ```
 
 
