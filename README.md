@@ -241,6 +241,21 @@
     <a href="classbinding.html" v-bind:class="{active: menu === 'tiga'}" v-on:click.prevent="gantimenu('tiga')">Tombol 3</a>
 ```
 
+## Key Modifiers
+> Dimana jika berada pada inputan jika di enter maka akan menjalnkan metod submit
+```js
+    submit: function (e) {
+        // Mengambil value dari inputan
+            let text = event.target.value
+        // meng pus atau memasukkan kedalam variabel text kedalam variabel input
+            this.input.push(text)
+            event.target.value = ''
+    }
+```
+```html
+    <input type="text" placeholder="Input 1" v-on:keyup.enter="submit">
+```
+
 
 # [Class and Style Bindings](https://vuejs.org/v2/guide/class-and-style.html)
 * Cara pengunaan

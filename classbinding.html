@@ -58,6 +58,11 @@
             <h1 v-text="bil"></h1>
             <p v-text="hitung()"></p>
             <button v-on:click="bil++">Click</button>
+
+            <hr>
+            <h2>Belajar Key Modifiers Enter</h2>
+            <h3 v-text="input"></h3>
+            <input type="text" placeholder="Input 1" v-on:keyup.enter="submit">
         </footer>
 
     </div>
@@ -71,6 +76,7 @@
         const isi = {
             'menu': 'satu',
             'menu_b': 'tiga',
+            'input': [],
             bil: 0,
         }
         const vm = new Vue({
@@ -92,6 +98,11 @@
                 },
                 hitung: function () {
                     return this.bil % 2 === 0 ? "Genap" : "Ganjil"
+                },
+                submit: function (e) {
+                    let text = event.target.value
+                    this.input.push(text)
+                    event.target.value = ''
                 }
             },
             computed: {
