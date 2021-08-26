@@ -22,9 +22,21 @@
 <body>
     <div id="app">
         <header>
+
+            <h2>Dengan button dan v-bind</h2>
             <button v-bind:class="{active: menu === 'satu'}" v-on:click="menu = 'satu'">Button 1</button>
             <button v-bind:class="{active: menu === 'dua'}" v-on:click="menu = 'dua'">Button 2</button>
             <button v-bind:class="{active: menu === 'tiga'}" v-on:click="menu = 'tiga'">Button 3</button>
+
+            <h2>Dengan link dan v-on</h2>
+            <a href="classbinding.html" v-bind:class="{active: menu_b === 'satu'}"
+                v-on:click="gantimenu('satu',  $event)">Tombol
+                1</a>
+            <a href="classbinding.html" v-bind:class="{active: menu_b === 'dua'}"
+                v-on:click="gantimenu('dua',  $event)">Tombol 2</a>
+            <a href="classbinding.html" v-bind:class="{active: menu_b === 'tiga'}"
+                v-on:click="gantimenu('tiga',  $event)">Tombol
+                3</a>
 
 
             <footer id="footer">
@@ -40,12 +52,21 @@
 
         const isi = {
             'menu': 'satu',
+            'menu_b': 'tiga',
         }
         const vm = new Vue({
             el: '#app',
             data: isi,
             // membuat metod
             methods: {
+                gantimenu: function (data, event) {
+                    console.log(event)
+
+                    //agar halaman tidak me reload
+                    event.preventDefault()
+                    this.menu_b = data
+
+                }
             },
             computed: {
             }

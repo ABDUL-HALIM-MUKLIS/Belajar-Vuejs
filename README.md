@@ -194,7 +194,7 @@
 ```
 
 
-# [Events](https://vuejs.org/v2/api/#vm-on)
+# [Event Handling](https://vuejs.org/v2/guide/events.html)
 ## vm.$on
 
 ```html
