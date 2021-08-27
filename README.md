@@ -289,13 +289,37 @@
 # [Form Input Binding](https://vuejs.org/v2/guide/forms.html)
 > yaitu sebuah inputan yang dimana akan langsung di tampung pada data dan langsung dapat di panggil
 
+## Text
 > Ada banyak inputan yang dapat di gunakan namun pada latihan kali ini saya mengunakan text
 > Dimana mengunkaan v-model yang didalamya berupa variabel data, nantinya text yang di inputkan langsung di tampung oleh data.
+
 ```html
     <input v-model="message" placeholder="edit me">
     <p>Message is: {{ message }}</p>
 ```
 
+* Contoh ke dua
+> dimana dengan contoh dibawah kita tidak perlu lagi mengakses value pada inputan namun hanya menambhkan v-model dan nama variabel maka apa yang di inputkan akan di simpan pada variabel
 
-[Terakhir tutorial 35](https://www.youtube.com/playlist?list=PL9At9z2rvOC-Z6Gt8uO1XMp4oyMlE3gml)
+```js
+    data: {
+        'input': [],
+        'kelas': ''
+    }
+    metod: {
+        submit: function (e) {
+                    this.input.unshift(this.kelas)
+                    this.kelas = ''
+                }
+    }
+    
+```
+```html
+    <h3 v-text="kelas"></h3>
+    <input type="text" placeholder="Input 2" v-on:keyup.enter="submit" v-model="kelas">
+```
+
+# [Components Basics](https://vuejs.org/v2/guide/components.html)
+
+[Terakhir tutorial 37](https://www.youtube.com/playlist?list=PL9At9z2rvOC-Z6Gt8uO1XMp4oyMlE3gml)
 

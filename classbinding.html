@@ -63,6 +63,10 @@
             <h2>Belajar Key Modifiers Enter</h2>
             <h3 v-text="input"></h3>
             <input type="text" placeholder="Input 1" v-on:keyup.enter="submit">
+            <hr>
+            <h2>Belajar From Input Binding</h2>
+            <h3 v-text="kelas"></h3>
+            <input type="text" placeholder="Input 2" v-on:keyup.enter="submita" v-model="kelas">
         </footer>
 
     </div>
@@ -78,6 +82,7 @@
             'menu_b': 'tiga',
             'input': [],
             bil: 0,
+            'kelas': ''
         }
         const vm = new Vue({
             el: '#app',
@@ -100,9 +105,13 @@
                     return this.bil % 2 === 0 ? "Genap" : "Ganjil"
                 },
                 submit: function (e) {
-                    let text = event.target.value
-                    this.input.push(text)
-                    event.target.value = ''
+                    let text = e.target.value
+                    this.input.unshift(text)
+                    e.target.value = ''
+                },
+                submita: function (e) {
+                    this.input.unshift(this.kelas)
+                    this.kelas = ''
                 }
             },
             computed: {
