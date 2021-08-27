@@ -196,8 +196,8 @@
 
 # [Event Handling](https://vuejs.org/v2/guide/events.html)
 ## Listening to Events
-
-```html
+* pada script
+```js
          <script>
                 const isi = {
                     bil: 0,
@@ -216,13 +216,14 @@
                 })
             </script>
 ```
+* pengunaan
 ```html
      <button v-on:click="bil++">Click</button>
 ```
 
 ## Event Modifiers
 > Dimana dengan program di bawah saya emembuat sebuah menu navigasi jika salah 1 menu di klik maka class active akan muncul pada class
-
+* pada script
 ```js
     data {
         'menu': 'tiga',
@@ -234,7 +235,7 @@
         },
     }
 ```
-
+* cara pengunaan
 ```html
     <a href="classbinding.html" v-bind:class="{active: menu === 'satu'}" v-on:click.prevent="gantimenu('satu')">Tombol 1</a>
     <a href="classbinding.html" v-bind:class="{active: menu === 'dua'}" v-on:click.prevent="gantimenu('dua')">Tombol 2</a>
@@ -243,6 +244,7 @@
 
 ## Key Modifiers
 > Dimana jika berada pada inputan jika di enter maka akan menjalnkan metod submit
+* pada script
 ```js
     submit: function (e) {
         // Mengambil value dari inputan
@@ -252,6 +254,7 @@
             event.target.value = ''
     }
 ```
+* pengunaan
 ```html
     <input type="text" placeholder="Input 1" v-on:keyup.enter="submit">
 ```
@@ -294,5 +297,5 @@
 ```
 
 
-[Terakhir tutorial 30](https://www.youtube.com/playlist?list=PL9At9z2rvOC-Z6Gt8uO1XMp4oyMlE3gml)
+[Terakhir tutorial 35](https://www.youtube.com/playlist?list=PL9At9z2rvOC-Z6Gt8uO1XMp4oyMlE3gml)
 
