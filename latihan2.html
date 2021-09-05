@@ -7,49 +7,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <link rel="stylesheet" href="style.css">
+
     <style>
         body {
             text-align: center;
             background-color: rgb(212, 212, 212);
         }
-        .btn {
-            display: block;
-            text-decoration: none;
-            font-size: 20px;
-            background-color: rgb(9, 79, 139);
-            margin-top: 10px;
-            margin-bottom: 10px;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            width: 200px;
-            text-align: center;
-            border-radius: 10px;
-            color: rgb(252, 252, 252);
+        p{
+            text-align: justify;
         }
-        header{
-            background-color: rgb(255, 255, 255);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            
-            margin-left: 50px;
-            margin-right: 50px;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 5px 10px rgba(10, 10, 10, 0.199);
+        .input-text {
+            height: 30px;
         }
     </style>
 </head>
 
 <body>
     <div id="app">
-        <header>
+        <header class="card">
+            <img src="https://vuejs.org/images/logo.svg" width="200px">
             <h1>latihan - latihan ke 2 Vuejs</h1>
-            
+
+            <input type="text" class="input-text" placeholder=" Input Kelas" v-on:keyup.enter="submit" v-model="kelas" >
         </header>
 
-        <footer id="footer">
+        <main class="card">
+            <h2>Coba</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro nam minus nulla, sequi eius, facilis pariatur enim velit dicta numquam commodi exercitationem rerum unde accusantium esse debitis voluptatibus vitae possimus?</p>
+
+            <h3>Daftar kelas :</h3>
+            <ul >
+                <template v-if="kelas.length >= 1">
+                    <li v-for="(k, index) in kelas" :key="index"><h4 v-text="k"></h4></li>
+                    
+                </template>
+                <li v-else>Kelas kosong</li>
+            </ul>
+        </main>
+
+        <footer class="card" id="footer">
             <p>copyright 2021</p>
         </footer>
 
@@ -61,7 +58,7 @@
     <!-- Inisiasi Object -->
     <script>
         const isi = {
-            
+            kelas: [],
         }
         const vm = new Vue({
             el: '#app',
