@@ -1,202 +1,230 @@
 <p align="center"><a href="https://vuejs.org/" target="_blank"><img src="https://vuejs.org/images/logo.svg" width="200"></a></p>
 
 # Belajar-Vuejs
+
 1. Mendownload Extensen pada browser yaitu extensi Vuejs
 2. Menaruh [CDN](https://vuejs.org/v2/guide/installation.html#CDN) dari Vuejs ke program
-    > CDN dapat didwonload dan sebagai asset dan juga bisa di akses secara online
 
-    ```js
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
-    ```
+   > CDN dapat didwonload dan sebagai asset dan juga bisa di akses secara online
+
+   ```js
+   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+   ```
 
 # [Options / DOM](https://vuejs.org/v2/api/#Options-DOM)
+
 ## el
+
 1. Menginisialisasi objek Vue
-    ```js
-        new Vue()
-    ```
+   ```js
+   new Vue();
+   ```
 2. Bungkus content dari HTMl atau halaman web yang nantinya bisa di akses oleh Vuejs
-    > pembungkus harus di beri id atau name atau class agar nantinya dapat di baca oleh el dari vue
 
-    ```html
-        <div id="app">
-            <!-- Content atau html yang akan dapat di akses oleh vue -->
-        </div>
-    ```
+   > pembungkus harus di beri id atau name atau class agar nantinya dapat di baca oleh el dari vue
 
-    > Setelah html yang inggin di aksess di bungkus maka pada objek vue tambahkan el yang dimana akan mengambil dari id atau name atau class yang sudah di tuliskan pada sebelumnya
+   ```html
+   <div id="app">
+     <!-- Content atau html yang akan dapat di akses oleh vue -->
+   </div>
+   ```
 
-    ```js
-        new Vue({
-            el: '#app'
-        })
-    ```
+   > Setelah html yang inggin di aksess di bungkus maka pada objek vue tambahkan el yang dimana akan mengambil dari id atau name atau class yang sudah di tuliskan pada sebelumnya
 
-# [Options / Data](https://vuejs.org/v2/api/#Options-Data) 
+   ```js
+   new Vue({
+     el: "#app",
+   });
+   ```
+
+# [Options / Data](https://vuejs.org/v2/api/#Options-Data)
+
 ## Data
+
 > Data merupakan sebuah properti pada vue yang berisi variabel yang dapat di isikan sebuah data
 
-* Menambhkan properti data
-    ```js
-        new Vue({
-                    el: '#app',
-                    data: {
-                        name: 'abdul',
-                        jurusan: 'Informatika'
-                    }
-                })
-    ``` 
-* Pemangilan
-    ```html
-        <h2>{{ name }}</h2>
-        <h2>{{ jurusan }}</2>
-    ```
+- Menambhkan properti data
+  ```js
+  new Vue({
+    el: "#app",
+    data: {
+      name: "abdul",
+      jurusan: "Informatika",
+    },
+  });
+  ```
+- Pemangilan
+  ```html
+      <h2>{{ name }}</h2>
+      <h2>{{ jurusan }}</2>
+  ```
 
 ## Method
+
 > Metod merupakan sebuah properti yang akan di tambahkan dimana value nya berisi sebuah fungsi-fungsi yang nantinya dapat di pergunakan dan dapat di panggil pada halaman html
 
-* menambhkan properti methods
-    ```js
-        new Vue({
-                    el: '#app',
-                    data: {
-                        name: 'abdul'
-                    },
-                    methods: {
-                        // metod tanpa parameter
-                        getname: function () {
-                            return 'Abdul ' + this.name
-                        },
-                        // metod dengan parameter
-                        updateName: function (newName) {
-                            return this.name = newName
-                        }
-                    }
-                })
-    ``` 
-* Pemangilan
-    ```html
-        <h2>{{ getname() }}</h2>
-    ```
+- menambhkan properti methods
+  ```js
+  new Vue({
+    el: "#app",
+    data: {
+      name: "abdul",
+    },
+    methods: {
+      // metod tanpa parameter
+      getname: function () {
+        return "Abdul " + this.name;
+      },
+      // metod dengan parameter
+      updateName: function (newName) {
+        return (this.name = newName);
+      },
+    },
+  });
+  ```
+- Pemangilan
+  ```html
+  <h2>{{ getname() }}</h2>
+  ```
 
 ## Computed Property
+
 > Menambhkan sebuah properti sendiri, yang nantinya di simpan pada properti compted.
-* Menambah properti computed
-    ```js
-        new Vue({
-                    el: '#app',
-                    data: {
-                            name: 'SmartPhone',
-                            qty: 0,
-                            price: 5000000
-                    },
-                    methods: {
-                            // isi metod
-                        }
-                    },
-                    computed: {
-                        totalPrice: function() {
-                            return  this.qty * this.price
-                        }
-                    }
-                })
-    ```
-* pemangilan 
+
+- Menambah properti computed
+  ```js
+      new Vue({
+                  el: '#app',
+                  data: {
+                          name: 'SmartPhone',
+                          qty: 0,
+                          price: 5000000
+                  },
+                  methods: {
+                          // isi metod
+                      }
+                  },
+                  computed: {
+                      totalPrice: function() {
+                          return  this.qty * this.price
+                      }
+                  }
+              })
+  ```
+- pemangilan
+
 ```html
-    {{ totalPrice }}
-``` 
+{{ totalPrice }}
+```
 
 # [Directives](https://vuejs.org/v2/api/#Directives)
-## v-text
-> v-text untuk memangil sebuah variabel namun hanya dengan menambhkan atribut pada html namun data yang di tampilkan berupa String
-```html
-        <!-- Mengunakan v-text -->
-        <span v-text="msg"></span>
 
-        <!-- Cara biasa -->
-        <span>{{msg}}</span>
+## v-text
+
+> v-text untuk memangil sebuah variabel namun hanya dengan menambhkan atribut pada html namun data yang di tampilkan berupa String
+
+```html
+<!-- Mengunakan v-text -->
+<span v-text="msg"></span>
+
+<!-- Cara biasa -->
+<span>{{msg}}</span>
 ```
 
 ## v-html
+
 > v-html untuk memangil sebuah variabel namun hanya dengan menambhkan atribut pada html namun data yang di tampilkan berupa tag html
 
-* Contoh data
+- Contoh data
+
 ```js
     data: {
             judul: '<h1> Coba v-html </h1>',
     },
 ```
-* pemangilan
+
+- pemangilan
+
 ```html
-    <!-- Mengunakan v-text -->
-    <div v-html="html"></div>
+<!-- Mengunakan v-text -->
+<div v-html="html"></div>
 ```
 
 ## v-for
-* data
+
+- data
+
 ```js
     'kelas': ['PHP', 'JAVA', 'Python'],
 ```
 
-* Perualangan
-> Diaman k sebagai alias dari key variabel
+- Perualangan
+  > Diaman k sebagai alias dari key variabel
 
 ```js
-    <ul>
-        <li v-for="k in kelas">
-            <h2>{{ k }}</h2>
-        </li>
-    </ul>
+<ul>
+  <li v-for="k in kelas">
+    <h2>{{ k }}</h2>
+  </li>
+</ul>
 ```
 
-* Cotoh perulangan 5x
+- Cotoh perulangan 5x
+
 ```html
-    <ul>
-        <li v-for="x in 5">{{ x }}</li>
-    </ul>
+<ul>
+  <li v-for="x in 5">{{ x }}</li>
+</ul>
 ```
 
 ## v-if
 
-* data
+- data
+
 ```js
     'kelas': [],
 ```
 
 > Dimana if mengecek apakah variabel index terdapat data tidak ada data akan menjalankan v-else dan tag di dalam if akan di hapus
 > v-else harus sejajar dan di bawah v-if jika terpisah dengan tag lain maka else diangap bukan bagian if di atas
+
 ```html
-    <ul v-if="kelas.length >= 1">
-        <li v-for="(k , index) of kelas">
-            <h4>{{ index+1 }} : {{ k }}</h4>
-        </li>
-    </ul>
-    <li v-else>Kelas kosong</li>
+<ul v-if="kelas.length >= 1">
+  <li v-for="(k , index) of kelas">
+    <h4>{{ index+1 }} : {{ k }}</h4>
+  </li>
+</ul>
+<li v-else>Kelas kosong</li>
 ```
 
 > v-if di atas di tempatkan pada tag ul, namun dapat juga di tempatkan pada tag tamplate, perbedaan dengan sebelumnya jika mengunakan template, tag tamplate tidak akan di munculkan pada halaman html
+
 ```html
-    <template v-if="">
-        ...
-    <template>
+<template v-if="">
+  ...
+  <template></template
+></template>
 ```
 
 ## v-show
+
 > v-show hampir sama dengan if namun v-show tidak menghilangkan tag html, namun merubah display menjadi none.
 > Pada v-show tidak dapat mengunakan tamplate seperti v-if
 
 ```html
-    <ul v-if="kelas.length >= 1">
-        <li v-for="(k , index) of kelas">
-            <h4>{{ index+1 }} : {{ k }}</h4>
-        </li>
-    </ul>
+<ul v-if="kelas.length >= 1">
+  <li v-for="(k , index) of kelas">
+    <h4>{{ index+1 }} : {{ k }}</h4>
+  </li>
+</ul>
 ```
 
-
 # [Event Handling](https://vuejs.org/v2/guide/events.html)
+
 ## Listening to Events
-* pada script
+
+- pada script
+
 ```js
          <script>
                 const isi = {
@@ -216,14 +244,19 @@
                 })
             </script>
 ```
-* pengunaan
+
+- pengunaan
+
 ```html
-     <button v-on:click="bil++">Click</button>
+<button v-on:click="bil++">Click</button>
 ```
 
 ## Event Modifiers
+
 > Dimana dengan program di bawah saya emembuat sebuah menu navigasi jika salah 1 menu di klik maka class active akan muncul pada class
-* pada script
+
+- pada script
+
 ```js
     data {
         'menu': 'tiga',
@@ -235,16 +268,36 @@
         },
     }
 ```
-* cara pengunaan
+
+- cara pengunaan
+
 ```html
-    <a href="classbinding.html" v-bind:class="{active: menu === 'satu'}" v-on:click.prevent="gantimenu('satu')">Tombol 1</a>
-    <a href="classbinding.html" v-bind:class="{active: menu === 'dua'}" v-on:click.prevent="gantimenu('dua')">Tombol 2</a>
-    <a href="classbinding.html" v-bind:class="{active: menu === 'tiga'}" v-on:click.prevent="gantimenu('tiga')">Tombol 3</a>
+<a
+  href="classbinding.html"
+  v-bind:class="{active: menu === 'satu'}"
+  v-on:click.prevent="gantimenu('satu')"
+  >Tombol 1</a
+>
+<a
+  href="classbinding.html"
+  v-bind:class="{active: menu === 'dua'}"
+  v-on:click.prevent="gantimenu('dua')"
+  >Tombol 2</a
+>
+<a
+  href="classbinding.html"
+  v-bind:class="{active: menu === 'tiga'}"
+  v-on:click.prevent="gantimenu('tiga')"
+  >Tombol 3</a
+>
 ```
 
 ## Key Modifiers
+
 > Dimana jika berada pada inputan jika di enter maka akan menjalnkan metod submit
-* pada script
+
+- pada script
+
 ```js
     submit: function (e) {
         // Mengambil value dari inputan
@@ -254,22 +307,26 @@
             event.target.value = ''
     }
 ```
-* pengunaan
-```html
-    <input type="text" placeholder="Input 1" v-on:keyup.enter="submit">
-```
 
+- pengunaan
+
+```html
+<input type="text" placeholder="Input 1" v-on:keyup.enter="submit" />
+```
 
 # [Class and Style Bindings](https://vuejs.org/v2/guide/class-and-style.html)
-* Cara pengunaan
+
+- Cara pengunaan
+
 ```html
-    <div
-    class="static"
-    v-bind:class="{ active: isActive, 'text-danger': hasError }"
-    ></div>
+<div
+  class="static"
+  v-bind:class="{ active: isActive, 'text-danger': hasError }"
+></div>
 ```
 
-* Data
+- Data
+
 ```js
     data: {
     isActive: true,
@@ -282,24 +339,25 @@
 > Script menjadi
 
 ```html
-    <div class="static active"></div>
+<div class="static active"></div>
 ```
 
-
 # [Form Input Binding](https://vuejs.org/v2/guide/forms.html)
+
 > yaitu sebuah inputan yang dimana akan langsung di tampung pada data dan langsung dapat di panggil
 
 ## Text
+
 > Ada banyak inputan yang dapat di gunakan namun pada latihan kali ini saya mengunakan text
 > Dimana mengunkaan v-model yang didalamya berupa variabel data, nantinya text yang di inputkan langsung di tampung oleh data.
 
 ```html
-    <input v-model="message" placeholder="edit me">
-    <p>Message is: {{ message }}</p>
+<input v-model="message" placeholder="edit me" />
+<p>Message is: {{ message }}</p>
 ```
 
-* Contoh ke dua
-> dimana dengan contoh dibawah kita tidak perlu lagi mengakses value pada inputan namun hanya menambhkan v-model dan nama variabel maka apa yang di inputkan akan di simpan pada variabel
+- Contoh ke dua
+  > dimana dengan contoh dibawah kita tidak perlu lagi mengakses value pada inputan namun hanya menambhkan v-model dan nama variabel maka apa yang di inputkan akan di simpan pada variabel
 
 ```js
     data: {
@@ -312,14 +370,19 @@
                     this.kelas = ''
                 }
     }
-    
+
 ```
+
 ```html
-    <h3 v-text="kelas"></h3>
-    <input type="text" placeholder="Input 2" v-on:keyup.enter="submit" v-model="kelas">
+<h3 v-text="kelas"></h3>
+<input
+  type="text"
+  placeholder="Input 2"
+  v-on:keyup.enter="submit"
+  v-model="kelas"
+/>
 ```
 
 # [Components Basics](https://vuejs.org/v2/guide/components.html)
 
 [Terakhir tutorial 37](https://www.youtube.com/playlist?list=PL9At9z2rvOC-Z6Gt8uO1XMp4oyMlE3gml)
-

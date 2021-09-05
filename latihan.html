@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            text-align: center;
+            background-color: rgb(212, 212, 212);
+        }
+        .btn {
+            display: block;
+            text-decoration: none;
+            font-size: 20px;
+            background-color: rgb(9, 79, 139);
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            width: 200px;
+            text-align: center;
+            border-radius: 10px;
+            color: rgb(252, 252, 252);
+        }
+        header{
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            margin-left: 50px;
+            margin-right: 50px;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 5px 10px rgba(10, 10, 10, 0.199);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <h1>latihan - latihan Vuejs</h1>
+            <a class="btn" href="latihan1.html">Latihan 1</a>
+            <a class="btn" href="latihan2.html">Latihan 2</a>
+            
+        </header>
+
+        <footer id="footer">
+            <p>copyright 2021</p>
+        </footer>
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <!-- Inisiasi Object -->
+    <script>
+        const isi = {
+            
+        }
+        const vm = new Vue({
+            el: '#app',
+            data: isi,
+            // membuat metod
+            methods: {
+                // metod tanpa parameter
+                getname: function () {
+                    return 'Abdul ' + this.name
+                },
+
+            },
+            computed: {
+                totalPrice: function () {
+                    return this.qty * this.price
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
