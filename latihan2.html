@@ -25,17 +25,14 @@
 
 <body>
     <div id="app">
-        <header class="card">
-            <img src="https://vuejs.org/images/logo.svg" width="200px">
-            <h1>latihan - latihan ke 2 Vuejs</h1>
-
-            <input type="text" class="input-text" placeholder=" Input Kelas" v-on:keyup.enter="submit" v-model="kelas" >
-        </header>
+        
+        <atas></atas>
 
         <main class="card">
             <h2>Coba</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro nam minus nulla, sequi eius, facilis pariatur enim velit dicta numquam commodi exercitationem rerum unde accusantium esse debitis voluptatibus vitae possimus?</p>
-
+            
+            <input type="text" class="input-text" placeholder=" Input Kelas" v-on:keyup.enter="submit" v-model="kelas">
             <h3>Daftar kelas :</h3>
             <ul >
                 <template v-if="kelas.length >= 1">
@@ -46,9 +43,7 @@
             </ul>
         </main>
 
-        <footer class="card" id="footer">
-            <p>copyright 2021</p>
-        </footer>
+        <bawah></bawah>
 
     </div>
 
@@ -57,6 +52,26 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
     <!-- Inisiasi Object -->
     <script>
+        // Membuat komponen
+
+        Vue.component('atas', {
+            template: `
+            <header class="card">
+                <img src="https://vuejs.org/images/logo.svg" width="200px">
+                <h1>latihan - latihan ke 2 Vuejs</h1>
+            </header>
+            `
+        })
+
+        Vue.component('bawah', {
+            template: `
+            <footer class="card" id="footer">
+                <p>copyright 2021</p>
+            </footer>
+            `
+        })
+
+        // akhir komponen
         const isi = {
             kelas: [],
         }
@@ -66,9 +81,10 @@
             // membuat metod
             methods: {
                 // metod tanpa parameter
-                getname: function () {
-                    return 'Abdul ' + this.name
-                },
+                submit: function (e) {
+                    this.input.unshift(this.kelas)
+                    this.kelas = ''
+                }
 
             },
             computed: {

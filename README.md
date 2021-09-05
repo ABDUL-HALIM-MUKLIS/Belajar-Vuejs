@@ -385,4 +385,4 @@
 
 # [Components Basics](https://vuejs.org/v2/guide/components.html)
 
-[Terakhir tutorial 37](https://www.youtube.com/playlist?list=PL9At9z2rvOC-Z6Gt8uO1XMp4oyMlE3gml)
+[Terakhir tutorial 38](https://www.youtube.com/playlist?list=PL9At9z2rvOC-Z6Gt8uO1XMp4oyMlE3gml)
