@@ -389,17 +389,28 @@
 
   ```js
   Vue.component("atas", {
+    title: ['title'],
     template: `
             <header class="card">
                 <img src="https://vuejs.org/images/logo.svg" width="200px">
-                <h1>latihan - latihan ke 2 Vuejs</h1>
+                <h1>{{ title }}</h1>
             </header>
             `,
+    data: function () {
+      return {
+        <!-- isi data -->
+      };
+    },
+    methods: {
+                <!-- Metod -->
+            }
   });
   ```
 
 - cara pemanggilan
+
   ```html
-  <atas></atas>
+  <atas title="latihan - latihan ke 2 Vuejs"></atas>
   ```
-  [Terakhir tutorial 38](https://www.youtube.com/playlist?list=PL9At9z2rvOC-Z6Gt8uO1XMp4oyMlE3gml)
+
+  [Terakhir tutorial 43](https://www.youtube.com/playlist?list=PL9At9z2rvOC-Z6Gt8uO1XMp4oyMlE3gml)
