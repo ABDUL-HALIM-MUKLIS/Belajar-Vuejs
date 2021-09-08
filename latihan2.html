@@ -32,7 +32,7 @@
             <h2>Coba</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro nam minus nulla, sequi eius, facilis pariatur enim velit dicta numquam commodi exercitationem rerum unde accusantium esse debitis voluptatibus vitae possimus?</p>
             
-            <kelas title="Daftar Kelas :" ></kelas>
+            <kelas title="Daftar Kelas :" v-bind:kelas="kelas" v-on:hapuskelas="hapuskelas"></kelas>
         </main>
 
         <bawah></bawah>
@@ -64,15 +64,17 @@
         })
 
         Vue.component('kelas', {
-            props: ['title'],
+            props: ['title','kelas', 'kelasbaru'],
             template: `
             <div>
                 <input type="text" class="input-text" placeholder=" Input Kelas" v-on:keyup.enter="submit" v-model="kelasbaru">
                 <h3>{{ title }}</h3>
                 <ul >
                     <template v-if="kelas.length >= 1">
-                        <li v-for="(k, index) in kelas" :key="index"><h4 v-text="k"></h4></li>
-                        
+                        <li v-for="(k, index) in kelas" :key="index">
+                            <h4 v-text="k"></h4>
+                            <a href="" v-on:click.prevent="$emit('hapuskelas')">Hapus</a>
+                        </li>
                     </template>
                     <li v-else>Kelas kosong</li>
                 </ul>
@@ -80,8 +82,6 @@
             `,
             data: function() {
                 return {
-                    kelas: [],
-                    kelasbaru: [],
                 }
             },
             methods: {
@@ -95,12 +95,17 @@
         // akhir komponen
         const isi = {
             
+            kelas: [],
+            // kelasbaru: [],
         }
         const vm = new Vue({
             el: '#app',
             data: isi,
             // membuat metod
             methods: {
+                hapuskelas: function() {
+
+                }
             },
             computed: {
             }

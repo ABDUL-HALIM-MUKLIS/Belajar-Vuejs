@@ -26,3 +26,13 @@
     padding: 20px;
     box-shadow: 5px 10px rgba(10, 10, 10, 0.199);
 }
+
+h4 {
+    display: inline;
+}
+
+a {
+    color: rgb(255, 0, 0);
+    text-decoration: none;
+    margin-left: 10px;
+}

@@ -413,4 +413,62 @@
   <atas title="latihan - latihan ke 2 Vuejs"></atas>
   ```
 
-  [Terakhir tutorial 43](https://www.youtube.com/playlist?list=PL9At9z2rvOC-Z6Gt8uO1XMp4oyMlE3gml)
+  - Cara component mengunakan data pada induk
+
+  - data pada induk
+
+  ```js
+  const isi = {
+    kelas: [],
+    kelasbaru: [],
+  };
+  ```
+
+  > Sebelum mengunakan data pada induk buat props nantinya begagai properti pada component
+
+  ```js
+  Vue.component("kelas", {
+    props: ["title", "kelas", "kelasbaru"],
+    template: `
+            <div>
+                <input type="text" class="input-text" placeholder=" Input Kelas" v-on:keyup.enter="submit" v-model="kelasbaru">
+                <h3>{{ title }}</h3>
+                <ul >
+                    <template v-if="kelas.length >= 1">
+                        <li v-for="(k, index) in kelas" :key="index">
+                            <h4 v-text="k"></h4>
+                            <a href="" v-on:click.prevent="$emit('hapuskelas')">Hapus</a>
+                        </li>
+                    </template>
+                    <li v-else>Kelas kosong</li>
+                </ul>
+            <div>
+            `,
+    data: function () {
+      return {};
+    },
+    methods: {
+      submit: function () {
+        this.kelas.unshift(this.kelasbaru);
+        this.kelasbaru = "";
+      },
+    },
+  });
+  ```
+
+  - pemanggilan
+    > Dimana mengunakan properti yang sudah di buat dan disi dengan nama variabel pada induk
+
+  ```html
+  <kelas
+    title="Daftar Kelas :"
+    v-bind:kelas="kelas"
+    v-on:hapuskelas="hapuskelas"
+  ></kelas>
+  ```
+
+# [Listening to Child Components Events](https://vuejs.org/v2/guide/components.html#Listening-to-Child-Components-Events)
+
+> yaitu komunikasi induk dengan component anak
+
+[Terakhir tutorial 43](https://www.youtube.com/playlist?list=PL9At9z2rvOC-Z6Gt8uO1XMp4oyMlE3gml)
