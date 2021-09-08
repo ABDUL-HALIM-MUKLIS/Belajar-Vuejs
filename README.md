@@ -469,6 +469,6 @@
 
 # [Listening to Child Components Events](https://vuejs.org/v2/guide/components.html#Listening-to-Child-Components-Events)
 
-> yaitu komunikasi induk dengan component anak
+> yaitu komunikasi induk dengan component anak dengan cara mengcustum component
 
-[Terakhir tutorial 43](https://www.youtube.com/playlist?list=PL9At9z2rvOC-Z6Gt8uO1XMp4oyMlE3gml)
+[Terakhir tutorial 47](https://www.youtube.com/playlist?list=PL9At9z2rvOC-Z6Gt8uO1XMp4oyMlE3gml)
