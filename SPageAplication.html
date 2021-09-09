@@ -21,7 +21,7 @@
         </nav>
 
         <main class="card"> 
-            <router-view ></router-view>
+            <router-view title="Daftar Kelas :" v-bind:kelas="kelas" v-on:hapuskelas="hapuskelas($event)"></router-view>
         </main>
         
         
@@ -36,6 +36,7 @@
             const Home = {template: `<div>Home</div>`}
             const About = {template: `<div>About</div>`}
             const Kelas = {
+                props: ['title','kelas', 'kelasbaru'],
                 template: `
                 <div>
                     <input type="text" class="input-text" placeholder=" Input Kelas" v-on:keyup.enter="submit" v-model="kelasbaru">
@@ -49,7 +50,13 @@
                         </template>
                         <li v-else>Kelas kosong</li>
                     </ul>
-                <div>`
+                <div>`,
+                methods: {
+                submit: function () {
+                    this.kelas.unshift(this.kelasbaru)
+                    this.kelasbaru = ''
+                }
+            }
             }
         // akhri komponent
         const routes = [
@@ -66,7 +73,6 @@
         const isi = {
             
             kelas: ['HTML', 'CSS'],
-            kelasbaru: [],
             // kelasbaru: [],
         }
         const vm = new Vue({
@@ -80,10 +86,6 @@
             data: isi,
             // membuat metod
             methods: {
-                submit: function () {
-                    this.kelas.unshift(this.kelasbaru)
-                    this.kelasbaru = ''
-                },
                 hapuskelas: function(e) {
                     // data kelas yang dimana mempunyai index yang di pilih lalu hapus 1 data
                     this.kelas.splice(e, 1)
