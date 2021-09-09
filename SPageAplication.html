@@ -10,17 +10,27 @@
 <body>
     
     <div id="app">
-        <nav class="nav">
-            <a class="btn" href="">Home</a>
-            <a class="btn" href="">About</a>
-            <a class="btn" href="">kelas</a>
+        <nav>
+            <div  class="card">
+
+                <router-link to="/" class="btn"> Home </router-link>
+                <router-link to="/about" class="btn"> About </router-link>
+                <router-link to="/kelas" class="btn" > Kelas </router-link>
+
+            </div>
         </nav>
+
+        <main class="card"> 
+            <router-view ></router-view>
+        </main>
         
         
     </div>
 
 
-    <script src="vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+
+    <script src="https://unpkg.com/vue-router@3.5.2/dist/vue-router.js"></script>
     <script>
         // Komponent
             const Home = {template: `<div>Home</div>`}
@@ -41,11 +51,6 @@
                     </ul>
                 <div>`
             }
-
-
-            Vue.component('kelas-component',{
-                te
-            })
         // akhri komponent
         const routes = [
             {path: '/', component: Home},
@@ -61,6 +66,7 @@
         const isi = {
             
             kelas: ['HTML', 'CSS'],
+            kelasbaru: [],
             // kelasbaru: [],
         }
         const vm = new Vue({
@@ -68,10 +74,16 @@
             router,
             component: {
                 'home': Home,
+                'about': About,
+                'kelas': Kelas,
             },
             data: isi,
             // membuat metod
             methods: {
+                submit: function () {
+                    this.kelas.unshift(this.kelasbaru)
+                    this.kelasbaru = ''
+                },
                 hapuskelas: function(e) {
                     // data kelas yang dimana mempunyai index yang di pilih lalu hapus 1 data
                     this.kelas.splice(e, 1)

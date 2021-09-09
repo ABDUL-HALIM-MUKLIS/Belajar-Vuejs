@@ -37,7 +37,6 @@ a {
     margin-left: 10px;
 }
 
-.nav {
-    display: inline;
-    background-color: rgb(135, 55, 211);
+body {
+    background-color: rgb(221, 221, 221);
 }
