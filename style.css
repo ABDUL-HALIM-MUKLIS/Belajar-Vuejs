@@ -36,3 +36,8 @@ a {
     text-decoration: none;
     margin-left: 10px;
 }
+
+.nav {
+    display: inline;
+    background-color: rgb(135, 55, 211);
+}
