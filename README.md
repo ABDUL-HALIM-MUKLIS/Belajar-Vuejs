@@ -471,4 +471,28 @@
 
 > yaitu komunikasi induk dengan component anak dengan cara mengcustum component
 
-[Terakhir tutorial 47](https://www.youtube.com/playlist?list=PL9At9z2rvOC-Z6Gt8uO1XMp4oyMlE3gml)
+```html
+<a href="" v-on:click.prevent="$emit('hapuskelas')">Hapus</a>
+```
+
+> metods pada Induk
+
+```js
+methods: {
+                hapuskelas: function(e) {
+                    // data kelas yang dimana mempunyai index yang di pilih lalu hapus 1 data
+                    this.kelas.splice(e, 1)
+                }
+            },
+```
+
+# Mengunakan [History](https://vuejs.org/v2/guide/migration-vue-router.html#history-true-replaced)
+
+```js
+const router = new VueRouter({
+  mode: "history",
+  routes,
+});
+```
+
+[Terakhir tutorial 50](https://www.youtube.com/playlist?list=PL9At9z2rvOC-Z6Gt8uO1XMp4oyMlE3gml)

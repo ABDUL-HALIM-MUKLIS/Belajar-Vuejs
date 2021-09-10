@@ -59,6 +59,8 @@
             }
             }
         // akhri komponent
+
+        // untuk rute halaman
         const routes = [
             {path: '/', component: Home},
             {path: '/about', component: About},
@@ -66,18 +68,23 @@
         ]
 
         const router = new VueRouter({
+            mode: 'history',
             routes
         })
 
 
         const isi = {
             
-            kelas: ['HTML', 'CSS'],
+            kelas: [
+                {id: 1, judul: 'Vuejs', deskrpisi: 'The Progressive JavaScript Framework', gambar: ''},
+                {id: 2, judul: 'Reactjs', deskrpisi: 'A JavaScript libary for building user interfaces', gambar: ''},
+            ],
             // kelasbaru: [],
         }
         const vm = new Vue({
             el: '#app',
             router,
+            // pemangilan komponenet lokal 
             component: {
                 'home': Home,
                 'about': About,
