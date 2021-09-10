@@ -44,8 +44,8 @@
                     <ul >
                         <template v-if="kelas.length >= 1">
                             <li v-for="(k, index) in kelas" :key="index">
-                                <h4 v-text="k"></h4>
-                                <a href="" v-on:click.prevent="$emit('hapuskelas',index)">Hapus</a>
+                                <h4 v-text="k.judul"></h4>
+                                <a href="" v-on:click.prevent="$emit('hapuskelas',k.id)">Hapus</a>
                             </li>
                         </template>
                         <li v-else>Kelas kosong</li>
@@ -76,8 +76,8 @@
         const isi = {
             
             kelas: [
-                {id: 1, judul: 'Vuejs', deskrpisi: 'The Progressive JavaScript Framework', gambar: ''},
-                {id: 2, judul: 'Reactjs', deskrpisi: 'A JavaScript libary for building user interfaces', gambar: ''},
+                {id: 1, judul: 'Vuejs', deskrpisi: 'The Progressive JavaScript Framework', gambar: 'https://vuejs.org/images/logo.svg'},
+                {id: 2, judul: 'Reactjs', deskrpisi: 'A JavaScript libary for building user interfaces', gambar: 'https://vuejs.org/images/logo.svg'},
             ],
             // kelasbaru: [],
         }
@@ -93,9 +93,12 @@
             data: isi,
             // membuat metod
             methods: {
-                hapuskelas: function(e) {
+                hapuskelas1: function(e) {
                     // data kelas yang dimana mempunyai index yang di pilih lalu hapus 1 data
                     this.kelas.splice(e, 1)
+                },
+                hapuskelas: function(id) {
+                    this.kelas = this.kelas.filter(k => k.id != id)
                 }
             },
             computed: {
